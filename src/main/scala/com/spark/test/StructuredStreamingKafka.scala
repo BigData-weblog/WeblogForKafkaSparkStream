@@ -17,6 +17,15 @@ object StructuredStreamingKafka {
 
   def main(args: Array[String]): Unit = {
 
+    /** spark-submit 提交到spark yarn集群
+     * val sparkconf:SparkConf=new SparkConf().setJars(Array[String]("hdfs:///barry-test/WeblogsKafkaSparkStream.jar")).setAppName("streaming")
+     * val spark  = SparkSession.builder()
+     * //.master("spark://mp186:7077")
+     * //.appName("streaming")
+     * .config(sparkconf)
+     * .getOrCreate()
+     */
+
     val spark  = SparkSession.builder()
       .master("local[2]")
       .appName("streaming").getOrCreate()
